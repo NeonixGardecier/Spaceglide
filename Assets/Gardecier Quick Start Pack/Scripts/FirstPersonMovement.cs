@@ -22,11 +22,18 @@ public class FirstPersonMovement : MonoBehaviour
 
     void Update()
     {
-        mesh.rotation = Quaternion.LookRotation(Vector3.RotateTowards(mesh.forward, cursor.position, 1, 0.0f));
-        Vector3 eulerAngles = mesh.rotation.eulerAngles;
-	    eulerAngles.x = 0;
-	    eulerAngles.z = 0;
+        // Get the direction to the cursor
+        Vector3 directionToCursor = cursor.position - mesh.position; 
+        directionToCursor.y = 0; // Keep the rotation on the horizontal plane
 
-	    mesh.rotation = Quaternion.Euler(eulerAngles);
+        // Only calculate the rotation if the direction vector is not zero
+        if (directionToCursor != Vector3.zero)
+        {
+            // Create a rotation that looks in that direction
+            Quaternion targetRotation = Quaternion.LookRotation(directionToCursor);
+
+            // Smoothly rotate towards the target direction
+            mesh.rotation = Quaternion.Slerp(mesh.rotation, targetRotation, 20);
+        }
     }
 }

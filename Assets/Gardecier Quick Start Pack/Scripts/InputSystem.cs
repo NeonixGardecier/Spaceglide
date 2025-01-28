@@ -6,17 +6,23 @@ public class InputSystem : MonoBehaviour
     public delegate void OnInputChanged(InputAction.CallbackContext context);
 
     public event OnInputChanged OnMovement;
-
     bool movingHeld;
     InputAction.CallbackContext movementContext;
 
     public event OnInputChanged OnRightClickInput;
+    bool rightClickHeld;
+    InputAction.CallbackContext rightClickContext;
 
     void Update()
     {
         if (movingHeld)
         {
             OnMovement.Invoke(movementContext);
+        }
+
+        if (rightClickHeld)
+        {
+            OnRightClickInput.Invoke(rightClickContext);
         }
     }
 
@@ -35,6 +41,14 @@ public class InputSystem : MonoBehaviour
 
     public void OnRightClick(InputAction.CallbackContext context)
     {
-        OnRightClickInput.Invoke(context);
+        if(context.performed)
+        { 
+            rightClickHeld = true;
+            rightClickContext = context;
+        }
+        if(context.canceled)
+        {
+            rightClickHeld = false;
+        }
     }
 }
