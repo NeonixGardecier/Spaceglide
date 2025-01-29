@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1150307083872999435}
   - component: {fileID: 6870848333013240825}
   - component: {fileID: 7506287504914800761}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Proj
-  m_TagString: Untagged
+  m_TagString: proj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,3 +154,6 @@ MonoBehaviour:
   damageType: 
   damageAmount: 0
   source: {fileID: 0}
+  homing: 0
+  homingTarget: {fileID: 0}
+  destroyOnHit: 1

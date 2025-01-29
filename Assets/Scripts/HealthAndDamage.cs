@@ -11,7 +11,23 @@ public class HealthAndDamage : MonoBehaviour
         if (health > stats.maxHealth){health = stats.maxHealth;}
     }
 
-    public void Damage(GameObject source, float damage, string damageType)
+    public void OnCollisionEnter(Collision other) 
+    {
+        if (other.gameObject.tag == "proj")
+        {
+            Projectile hitProj = other.gameObject.GetComponent<Projectile>();
+
+            Damage(hitProj.source, hitProj.damageAmount, hitProj.damageType, hitProj.team);
+
+            if (hitProj.destroyOnHit)
+            {
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
+    float damageToTake;
+    public void Damage(GameObject source, float damage, string damageType, int team)
     {
         switch(damageType)
         {
@@ -36,8 +52,19 @@ public class HealthAndDamage : MonoBehaviour
             break;
 
             case "Strike":
-
+                damageToTake = damage - (stats.defence + stats.bonus_defence);
             break;
         }
+
+        if (damageToTake < 0){damageToTake = 0;}
+
+        health -= damageToTake;
+
+        source.GetComponent<HealthAndDamage>().ReturnedDamageHit(source, damage, damageType, team);
+    }
+
+    public void ReturnedDamageHit(GameObject source, float damage, string damageType, int team)
+    {
+
     }
 }

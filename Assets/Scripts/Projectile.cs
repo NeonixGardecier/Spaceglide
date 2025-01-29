@@ -9,6 +9,11 @@ public class Projectile : MonoBehaviour
     public float damageAmount;
     public GameObject source;
 
+    public bool homing;
+    public Transform homingTarget;
+
+    public bool destroyOnHit;
+
     void FixedUpdate() 
     {
         transform.position += transform.forward * Time.deltaTime * movementSpeed;

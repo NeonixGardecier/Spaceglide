@@ -45,6 +45,14 @@ public class Attack : MonoBehaviour
             instProj.damageAmount = stats.elementalPower;
         }
 
+        if (stats.isPlayer)
+        {
+            instProj.gameObject.layer = LayerMask.NameToLayer("PlayerProj");
+        }
+        else{
+            instProj.gameObject.layer = LayerMask.NameToLayer("EnemyProj");
+        }
+
     }
 
     IEnumerator FireDelay()
