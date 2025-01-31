@@ -1,5 +1,10 @@
 using UnityEngine;
 
+public enum items //Pool of items
+{
+    None, Sword
+}
+
 public class Stats : MonoBehaviour
 {
     public float team;
@@ -36,4 +41,23 @@ public class Stats : MonoBehaviour
 
     public float bonus_attackSpeed;
     public float bonus_projectileSpeed;
+
+    [Header("Inventory")]
+    public ItemData itemData;
+    public items Inventory_Slot1;
+    public items Inventory_Slot2;
+    public items Inventory_Slot3;
+    public items Inventory_Slot4;
+    public items Inventory_Slot5;
+    public items Inventory_Slot6;
+
+    void Update()
+    {
+        UpdateInventoryStats();
+    }
+
+    void UpdateInventoryStats()
+    {
+        
+    }
 }
