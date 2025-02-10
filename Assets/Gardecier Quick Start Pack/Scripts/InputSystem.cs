@@ -10,7 +10,7 @@ public class InputSystem : MonoBehaviour
     InputAction.CallbackContext movementContext;
 
     public event OnInputChanged OnRightClickInput;
-    bool rightClickHeld;
+    public bool rightClickHeld;
     InputAction.CallbackContext rightClickContext;
 
     void Update()

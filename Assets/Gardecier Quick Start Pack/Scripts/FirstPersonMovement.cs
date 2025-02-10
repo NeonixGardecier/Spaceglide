@@ -5,6 +5,7 @@ public class FirstPersonMovement : MonoBehaviour
 {
     public InputSystem inputs;
     public float speed;
+    public float moveNeg;
 
     public Transform cursor;
     public Transform mesh;
@@ -17,7 +18,7 @@ public class FirstPersonMovement : MonoBehaviour
     public void Movement(InputAction.CallbackContext context)
     {
         Vector2 inputVector = context.ReadValue<Vector2>();
-        transform.Translate(new Vector3(inputVector.x, 0f, inputVector.y) * speed * Time.deltaTime);
+        transform.Translate(new Vector3(inputVector.x, 0f, inputVector.y) * (speed / moveNeg) * Time.deltaTime);
     }
 
     void Update()
@@ -34,6 +35,14 @@ public class FirstPersonMovement : MonoBehaviour
 
             // Smoothly rotate towards the target direction
             mesh.rotation = Quaternion.Slerp(mesh.rotation, targetRotation, 20);
+        }
+
+        if (inputs.rightClickHeld)
+        {
+            moveNeg = 5;
+        }
+        else{
+            moveNeg = 1;
         }
     }
 }

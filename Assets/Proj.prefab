@@ -157,3 +157,4 @@ MonoBehaviour:
   homing: 0
   homingTarget: {fileID: 0}
   destroyOnHit: 1
+  lifetime: 0.75

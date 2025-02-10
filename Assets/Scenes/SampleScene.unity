@@ -606,6 +606,13 @@ MonoBehaviour:
   bonus_fleetness: 0
   bonus_attackSpeed: 0
   bonus_projectileSpeed: 0
+  itemData: {fileID: 0}
+  Inventory_Slot1: 0
+  Inventory_Slot2: 0
+  Inventory_Slot3: 0
+  Inventory_Slot4: 0
+  Inventory_Slot5: 0
+  Inventory_Slot6: 0
 --- !u!54 &1097834487
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -782,6 +789,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Entity
       objectReference: {fileID: 0}
+    - target: {fileID: 4452723507266873491, guid: 053a84ade227a6940b1a353340d6cbec, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 4577268954143668872, guid: 053a84ade227a6940b1a353340d6cbec, type: 3}
       propertyPath: mesh
       value: 
@@ -955,6 +966,13 @@ MonoBehaviour:
   bonus_fleetness: 0
   bonus_attackSpeed: 0
   bonus_projectileSpeed: 0
+  itemData: {fileID: 0}
+  Inventory_Slot1: 0
+  Inventory_Slot2: 0
+  Inventory_Slot3: 0
+  Inventory_Slot4: 0
+  Inventory_Slot5: 0
+  Inventory_Slot6: 0
 --- !u!114 &1604086380
 MonoBehaviour:
   m_ObjectHideFlags: 0

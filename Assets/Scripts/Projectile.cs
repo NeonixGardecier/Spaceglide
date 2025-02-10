@@ -14,8 +14,15 @@ public class Projectile : MonoBehaviour
 
     public bool destroyOnHit;
 
+    public float lifetime;
+
     void FixedUpdate() 
     {
         transform.position += transform.forward * Time.deltaTime * movementSpeed;
+    }
+
+    void Start()
+    {
+        Destroy(this.gameObject, lifetime);
     }
 }
