@@ -42,10 +42,16 @@ public class ItemData : MonoBehaviour
 
         switch (item)
         {
+            case items.None:
+                returnData.itemName = "";
+                returnData.spriteID = 0;
+            break;
             case items.Sword:
                 returnData.itemName = "Sword";
                 returnData.strikePower = 10;
                 returnData.Value = 75;
+
+                returnData.spriteID = 1;
             break;
         }
         return returnData;
