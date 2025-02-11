@@ -10,7 +10,6 @@ public class idata
     public int Value;
 
     public int passiveID1;
-    public int passiveID2;
 
     [Header("Stats")]
     public float maxHealth; //Displayed as "Health" on stat screens

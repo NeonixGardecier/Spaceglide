@@ -67,14 +67,20 @@ public class Stats : MonoBehaviour
      float item_attackSpeed;
      float item_projectileSpeed;
 
+    public idata slot1Data;
+    public idata slot2Data;
+    public idata slot3Data;
+    public idata slot4Data;
+    public idata slot5Data;
+    public idata slot6Data;
     void UpdateInventoryStats()
     {
-        idata slot1Data = itemData.GetItemData(Inventory_Slot1);
-        idata slot2Data = itemData.GetItemData(Inventory_Slot2);
-        idata slot3Data = itemData.GetItemData(Inventory_Slot3);
-        idata slot4Data = itemData.GetItemData(Inventory_Slot4);
-        idata slot5Data = itemData.GetItemData(Inventory_Slot5);
-        idata slot6Data = itemData.GetItemData(Inventory_Slot6);
+        slot1Data = itemData.GetItemData(Inventory_Slot1);
+        slot2Data = itemData.GetItemData(Inventory_Slot2);
+        slot3Data = itemData.GetItemData(Inventory_Slot3);
+        slot4Data = itemData.GetItemData(Inventory_Slot4);
+        slot5Data = itemData.GetItemData(Inventory_Slot5);
+        slot6Data = itemData.GetItemData(Inventory_Slot6);
 
         item_maxHealth       = slot1Data.maxHealth       + slot2Data.maxHealth       + slot3Data.maxHealth       + slot4Data.maxHealth       + slot5Data.maxHealth       + slot6Data.maxHealth;
         item_healthRegen     = slot1Data.healthRegen     + slot2Data.healthRegen     + slot3Data.healthRegen     + slot4Data.healthRegen     + slot5Data.healthRegen     + slot6Data.healthRegen;
